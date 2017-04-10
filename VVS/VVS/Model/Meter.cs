@@ -11,6 +11,7 @@ namespace VVS.Model
         public int SerialNumber { get; set; }
         public double Consumtion { get; set; }
         public string PicturePath { get; set; }
+        public string Comment { get; set; }
 
         public Meter(int serialNumber, double consumtion, string picturePath)
         {
