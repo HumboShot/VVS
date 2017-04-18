@@ -16,6 +16,7 @@ namespace VVS.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            
 
             base.OnCreate(bundle);
 

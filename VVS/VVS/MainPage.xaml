@@ -4,8 +4,11 @@
              xmlns:local="clr-namespace:VVS"
              x:Class="VVS.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <Label>Meter nummer something</Label>
+        <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
+        <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
+    </StackLayout>
+
 
 </ContentPage>
