@@ -6,8 +6,8 @@
     <StackLayout>
         <Label Text="Nyt måler"/>
         <Label Text="Serienummer"/>
-        <Entry IsEnabled="False"/>
-        <Button Text="Scan serienummer"/>
+        <Entry IsEnabled="False" x:Name="BarcodeField"/>
+        <Button Text="Scan serienummer" Clicked="Button_OnClicked"/>
         <Label Text="Validere"/>
         <Entry Keyboard="Numeric"/>
         <Label Text="Forbrug på den nye måler"/>

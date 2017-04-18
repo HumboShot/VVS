@@ -8,7 +8,6 @@
         <Label>Meter nummer something</Label>
         <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
         <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
-        <Button Text="barcode scan" Clicked="Barcode_OnClicked"/>
     </StackLayout>
 
 

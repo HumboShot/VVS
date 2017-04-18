@@ -44,9 +44,6 @@
     <Compile Include="Layout\OldMeter.xaml.cs">
       <DependentUpon>OldMeter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -106,12 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Layout\NewMeter.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Layout\Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

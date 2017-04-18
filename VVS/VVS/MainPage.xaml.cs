@@ -42,17 +42,5 @@ namespace VVS
             }
         }
 
-        private async void Barcode_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new Page1());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("New meter didn't work");
-                throw;
-            }
-        }
     }
 }
