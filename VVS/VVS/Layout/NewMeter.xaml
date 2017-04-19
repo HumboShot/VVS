@@ -3,19 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VVS.Layout.NewMeter">
 
-    <StackLayout>
-        <Label Text="Nyt måler"/>
-        <Label Text="Serienummer"/>
-        <Entry IsEnabled="False" x:Name="BarcodeField"/>
-        <Button Text="Scan serienummer" Clicked="Button_OnClicked"/>
-        <Label Text="Validere"/>
-        <Entry Keyboard="Numeric"/>
-        <Label Text="Forbrug på den nye måler"/>
-        <Label Text="Skriv forbrug i m3"/>
-        <Entry Keyboard="Numeric"/>
-        <Label Text="Validere tal"/>
-        <Entry Keyboard="Numeric"/>
-        <Button Text="Gem"/>
-    </StackLayout>
-
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="10">
+            <Label Text="Serienummer"/>
+            <Entry IsEnabled="False" x:Name="BarcodeField"/>
+            <Button Text="Scan serienummer" Clicked="Button_OnClicked"/>
+            <Label Text="Validere"/>
+            <Entry Keyboard="Numeric"/>
+            <Label Text="Skriv forbrug i m3"/>
+            <Entry Keyboard="Numeric"/>
+            <Label Text="Validere tal"/>
+            <Entry Keyboard="Numeric"/>
+            <Entry Placeholder="Kommentar"/>
+            <Button Text="Gem"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

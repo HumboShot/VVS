@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VVS.Layout.OldMeter">
 
-    <StackLayout>
+    <StackLayout Spacing="10" Padding="10">
         <Label Text="Gamle meters serienummer" FontSize="25" FontAttributes="Bold"/>
         <Label Text="Serienummer"/>
         <Entry Keyboard="Numeric"/>

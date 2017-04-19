@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VVS.Layout;
 using Xamarin.Forms;
 
@@ -42,5 +38,17 @@ namespace VVS
             }
         }
 
+        private async void OldMeterPictures_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new OldMeterPicture());
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Old meter picture didn't work");
+                throw;
+            }
+        }
     }
 }
