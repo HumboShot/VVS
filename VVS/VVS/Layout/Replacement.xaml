@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VVS.Layout.Replacement">
+    
+    <StackLayout>
+        <Button Text="Bildere af gamle måler" Clicked="OldMeterPictures_OnClicked"/>
+        <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
+        <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
+    </StackLayout>
+</ContentPage>

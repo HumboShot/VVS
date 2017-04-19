@@ -12,41 +12,15 @@ namespace VVS
             InitializeComponent();
         }
 
-        private async void OldMeter_OnClicked(object sender, EventArgs e)
+        private async void Debug_OnClicked(object sender, EventArgs e)
         {
             try
             {
-                await Navigation.PushAsync(new OldMeter());
+                await Navigation.PushAsync(new Replacement());
             }
             catch (Exception)
             {
-                Debug.WriteLine("Old meter didn't work");
-                throw;
-            }
-        }
-
-        private async void NewMeter_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new NewMeter());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("New meter didn't work");
-                throw;
-            }
-        }
-
-        private async void OldMeterPictures_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new OldMeterPicture());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Old meter picture didn't work");
+                Debug.WriteLine("Replacement didn't work");
                 throw;
             }
         }

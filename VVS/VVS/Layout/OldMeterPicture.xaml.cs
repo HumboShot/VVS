@@ -47,6 +47,7 @@ namespace VVS.Layout
                     return stream;
                 });
             };
+
             takePhotoMeter.Clicked += async (sender, args) =>
             {
                 await CrossMedia.Current.Initialize();
@@ -56,8 +57,6 @@ namespace VVS.Layout
                     await DisplayAlert("No Camera", ":( No camera available.", "OK");
                     return;
                 }
-
-
 
                 var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                 {

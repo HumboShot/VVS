@@ -2,13 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:VVS"
-             x:Class="VVS.MainPage">
+             x:Class="VVS.MainPage"
+             Title="Hjørring Rørteknik A/S">
 
     <StackLayout>
-        <Label>Meter nummer something</Label>
-        <Button Text="Bildere af gamle måler" Clicked="OldMeterPictures_OnClicked"/>
-        <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
-        <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
+        <Button Text="DEBUG" Clicked="Debug_OnClicked"/>
+        <ListView></ListView>
     </StackLayout>
 
 
