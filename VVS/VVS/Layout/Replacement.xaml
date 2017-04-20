@@ -7,5 +7,6 @@
         <Button Text="Bildere af gamle måler" Clicked="OldMeterPictures_OnClicked"/>
         <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
         <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
+        <Button Text="Bildere af ny måler" Clicked="NewMeterPictures_OnClicked"/>
     </StackLayout>
 </ContentPage>
