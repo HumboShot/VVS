@@ -4,17 +4,21 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using VVS.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace VVS.Layout
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Replacement : ContentPage
-    {
-        public Replacement()
+    public partial class ReplacementPage : ContentPage
+    {        
+        private Replacement _replacement;
+        public ReplacementPage(Replacement currentReplacement)
         {
+            if (currentReplacement == null)
+                throw new ArgumentNullException(nameof(currentReplacement));
+            _replacement = currentReplacement;
             InitializeComponent();
         }
 
@@ -35,7 +39,7 @@ namespace VVS.Layout
         {
             try
             {
-                await Navigation.PushAsync(new NewMeter());
+                await Navigation.PushAsync(new NewMeter(_replacement,1));
             }
             catch (Exception)
             {
@@ -49,19 +53,6 @@ namespace VVS.Layout
             try
             {
                 await Navigation.PushAsync(new OldMeterPicture());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Old meter picture didn't work");
-                throw;
-            }
-        }
-
-        private async void NewMeterPictures_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new NewMeterPicture());
             }
             catch (Exception)
             {

@@ -7,7 +7,18 @@
 
     <StackLayout>
         <Button Text="DEBUG" Clicked="Debug_OnClicked"/>
-        <ListView></ListView>
+        <ListView x:Name="replacementsListView"  ItemSelected="OnReplaceSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding CustomerName}"/>                            
+                            <Label Text="{Binding NewMeterId}"/>
+                        </StackLayout>
+                    </ViewCell>                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 

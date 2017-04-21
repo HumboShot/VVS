@@ -6,16 +6,16 @@
     <ScrollView>
         <StackLayout Spacing="10" Padding="10">
             <Label Text="Serienummer"/>
-            <Entry IsEnabled="False" x:Name="BarcodeField"/>
-            <Button Text="Scan serienummer" Clicked="Button_OnClicked"/>
+            <Entry Keyboard="Numeric" x:Name="BarcodeField"/>            
             <Label Text="Validere"/>
-            <Entry Keyboard="Numeric"/>
+            <Entry Keyboard="Numeric" x:Name="BarcodeField2"/>
+            <Button Text="Scan serienummere" Clicked="Button_OnClicked"/>
             <Label Text="Skriv forbrug i m3"/>
-            <Entry Keyboard="Numeric"/>
+            <Entry Keyboard="Numeric" x:Name="Consumption"/>
             <Label Text="Validere tal"/>
-            <Entry Keyboard="Numeric"/>
-            <Entry Placeholder="Kommentar"/>
-            <Button Text="Gem"/>
+            <Entry Keyboard="Numeric" x:Name="Consumption2"/>
+            <Entry Placeholder="Kommentar" x:Name="Comment"/>
+            <Button Text="Gem" Clicked="Onsave"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
