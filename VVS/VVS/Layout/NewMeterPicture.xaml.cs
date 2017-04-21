@@ -15,6 +15,7 @@ namespace VVS.Layout
         public NewMeterPicture()
         {
             InitializeComponent();
+
             takePhotoFull.Clicked += async (sender, args) =>
             {
                 await CrossMedia.Current.Initialize();

@@ -59,6 +59,22 @@ namespace VVS.Layout
                 Debug.WriteLine("Old meter picture didn't work");
                 throw;
             }
+
+       
+        }
+
+        private async void NewMeterPictures_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new NewMeterPicture());
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Old meter picture didn't work");
+                throw;
+            }
+
         }
     }
 }
