@@ -1,6 +1,8 @@
 ﻿using SQLite;
 using System;
 using System.Diagnostics;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using VVS.Database;
 using VVS.Model;
 using Xamarin.Forms;
@@ -30,6 +32,72 @@ namespace VVS.Layout
             {
                 
             }
+
+            takePhotoFull.Clicked += async (sender, args) =>
+            {
+                await CrossMedia.Current.Initialize();
+
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
+                }
+
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    //TODO Insert id into filename 
+                    Directory = "NewInstallion",
+                    Name = DateTime.Now + " FULL.jpg",
+                    PhotoSize = PhotoSize.Small,
+                    //Save to album makes the photo visable in your gallary app
+                    SaveToAlbum = true
+                });
+
+                if (file == null)
+                    return;
+                //Shows a alert with the full path to the picture, it's only meant to be used for debugging
+                await DisplayAlert("File Location", file.Path, "OK");
+
+                imageFull.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+            };
+
+            takePhotoMeter.Clicked += async (sender, args) =>
+            {
+                await CrossMedia.Current.Initialize();
+
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
+                }
+
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    //TODO Insert id into filename 
+                    Directory = "NewInstallion",
+                    Name = DateTime.Now + " METER.jpg",
+                    PhotoSize = PhotoSize.Small,
+                    //Save to album makes the photo visable in your gallary app
+                    SaveToAlbum = true
+                });
+
+                if (file == null)
+                    return;
+                //Shows a alert with the full path to the picture, it's only meant to be used for debugging
+                await DisplayAlert("File Location", file.Path, "OK");
+
+                imageMeter.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+            };
         }
 
         private async void Button_OnClicked(object sender, EventArgs e)

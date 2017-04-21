@@ -12,7 +12,7 @@ namespace VVS.Layout
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReplacementPage : ContentPage
-    {        
+    {
         private Replacement _replacement;
         public ReplacementPage(Replacement currentReplacement)
         {
@@ -39,7 +39,7 @@ namespace VVS.Layout
         {
             try
             {
-                await Navigation.PushAsync(new NewMeter(_replacement,1));
+                await Navigation.PushAsync(new NewMeter(_replacement, 1));
             }
             catch (Exception)
             {
@@ -48,33 +48,6 @@ namespace VVS.Layout
             }
         }
 
-        private async void OldMeterPictures_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new OldMeterPicture());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Old meter picture didn't work");
-                throw;
-            }
 
-       
-        }
-
-        private async void NewMeterPictures_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                await Navigation.PushAsync(new NewMeterPicture());
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Old meter picture didn't work");
-                throw;
-            }
-
-        }
     }
 }

@@ -38,9 +38,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Layout\NewMeterPicture.xaml.cs">
-      <DependentUpon>NewMeterPicture.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\GenerateData.cs" />
     <Compile Include="Database\ISQLiteDB.cs" />
     <Compile Include="Layout\NewMeter.xaml.cs">
@@ -48,9 +45,6 @@
     </Compile>
     <Compile Include="Layout\OldMeter.xaml.cs">
       <DependentUpon>OldMeter.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Layout\OldMeterPicture.xaml.cs">
-      <DependentUpon>OldMeterPicture.xaml</DependentUpon>
     </Compile>
     <Compile Include="Layout\ReplacementPage.xaml.cs">
       <DependentUpon>ReplacementPage.xaml</DependentUpon>
@@ -144,19 +138,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Layout\OldMeterPicture.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Layout\ReplacementPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Layout\NewMeterPicture.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

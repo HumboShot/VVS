@@ -15,6 +15,10 @@
             <Label Text="Validere tal"/>
             <Entry Keyboard="Numeric" x:Name="Consumption2"/>
             <Entry Placeholder="Kommentar" x:Name="Comment"/>
+            <Button Text="Hele installionen" x:Name="takePhotoFull"/>
+            <Button Text="Vand meter" x:Name="takePhotoMeter"/>
+            <Image x:Name="imageFull" Aspect="AspectFit"/>
+            <Image x:Name="imageMeter" Aspect="AspectFit"/>
             <Button Text="Gem" Clicked="Onsave"/>
         </StackLayout>
     </ScrollView>
