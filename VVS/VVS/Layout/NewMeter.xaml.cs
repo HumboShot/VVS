@@ -47,7 +47,7 @@ namespace VVS.Layout
                 {
                     //TODO Insert id into filename 
                     Directory = "NewInstallion",
-                    Name = DateTime.Now + " FULL.jpg",
+                    Name = _replacement.Id + " " + DateTime.Now + " FULL.jpg",
                     PhotoSize = PhotoSize.Small,
                     //Save to album makes the photo visable in your gallary app
                     SaveToAlbum = true
@@ -80,7 +80,7 @@ namespace VVS.Layout
                 {
                     //TODO Insert id into filename 
                     Directory = "NewInstallion",
-                    Name = DateTime.Now + " METER.jpg",
+                    Name = _replacement.Id + " " + DateTime.Now + " METER.jpg",
                     PhotoSize = PhotoSize.Small,
                     //Save to album makes the photo visable in your gallary app
                     SaveToAlbum = true
