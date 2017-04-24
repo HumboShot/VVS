@@ -19,6 +19,10 @@
             <Button Text="Vand meter" x:Name="takePhotoMeter"/>
             <Image x:Name="imageFull" Aspect="AspectFit"/>
             <Image x:Name="imageMeter" Aspect="AspectFit"/>
+            <Label Text="GPS koordinate"/>
+            <Entry Keyboard="Numeric" x:Name="Latitude" IsEnabled="False"/>
+            <Entry Keyboard="Numeric" x:Name="Longitude" IsEnabled="False"/>
+            <Button Text="Hent koordinate" Clicked="GetLokation_OnClicked"/>
             <Button Text="Gem" Clicked="Onsave"/>
         </StackLayout>
     </ScrollView>
