@@ -12,8 +12,8 @@ namespace VVS.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string CustomerName { get; set; }
-        public int OldMeterId { get; set; }
-        public int NewMeterId { get; set; }
+        public long OldMeterId { get; set; }
+        public long NewMeterId { get; set; }
         public DateTime  Time { get; set; }
         public int LocId { get; set; }
         [Ignore]
@@ -30,7 +30,7 @@ namespace VVS.Model
             
         }
 
-        public Replacement(int id, string customerName, int oldMeterId, int newMeterId, DateTime time, int locId, int status, int employeeId)
+        public Replacement(int id, string customerName, long oldMeterId, long newMeterId, DateTime time, int locId, int status, int employeeId)
         {
             Id = id;
             CustomerName = customerName;
@@ -42,7 +42,7 @@ namespace VVS.Model
             EmployeeId = employeeId;
         }
 
-        public Replacement(string customerName, int oldMeterId, DateTime time, int locId, int status, int employeeId)
+        public Replacement(string customerName, long oldMeterId, DateTime time, int locId, int status, int employeeId)
         {
             CustomerName = customerName;
             OldMeterId = oldMeterId;            

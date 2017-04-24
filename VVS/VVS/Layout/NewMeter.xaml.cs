@@ -166,10 +166,10 @@ namespace VVS.Layout
                 CheckNullorWhiteSpace(serialNo2Raw, enterSN);
                 serialNo2Raw = serialNo2Raw.ToLower().Trim();
 
-                int serialNo1 = -1;
-                Int32.TryParse(serialNo1Raw, out serialNo1);
-                int serialNo2 = -1;
-                Int32.TryParse(serialNo2Raw, out serialNo2);
+                long serialNo1 = -1;
+                long.TryParse(serialNo1Raw, out serialNo1);
+                long serialNo2 = -1;
+                long.TryParse(serialNo2Raw, out serialNo2);
 
                /* if (serialNo2 != serialNo1)
                 {
@@ -225,7 +225,9 @@ namespace VVS.Layout
                         await _connection.UpdateAsync(_replacement);
                         //update Location with new gps coordinates
                         await _connection.UpdateAsync(location);
-                    }else
+                        await DisplayAlert("Info", "Data er gemt", "OK");
+                    }
+                    else
                     {
                         await DisplayAlert("Error", "Måleren med given serial nummer existerer allerede", "OK");
                     }
@@ -237,12 +239,9 @@ namespace VVS.Layout
                 {
                     Debug.WriteLine("ERRRORR" + ex.Message);
                 }
-
-                var dloc = await _connection.Table<Location>().ToListAsync();
-                var loc = dloc.Find(x => x.Id == locId);
-                Debug.WriteLine(loc.Id + " " + loc.Latitude + " " + loc.Longitude);
-
+ 
                 await Navigation.PopAsync();
+               
             }
             catch (Exception)
             {

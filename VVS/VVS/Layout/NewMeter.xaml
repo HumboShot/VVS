@@ -6,7 +6,7 @@
     <ScrollView>
         <StackLayout Spacing="10" Padding="10">
             <Label Text="Serienummer"/>
-            <Entry Keyboard="Numeric" x:Name="BarcodeField"/>            
+            <Entry Keyboard="Numeric" x:Name="BarcodeField" IsEnabled="False"/>            
             <Label Text="Validere"/>
             <Entry Keyboard="Numeric" x:Name="BarcodeField2"/>
             <Button Text="Scan serienummere" Clicked="Button_OnClicked"/>
