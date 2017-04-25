@@ -86,19 +86,5 @@ namespace VVS
             }
 
         }
-
-        private async void Debug_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {   
-                //TODO get the right replacement.             
-                await Navigation.PushAsync(new ReplacementPage(new Replacement()));
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Replacement didn't work");
-                throw;
-            }
-        }
     }
 }

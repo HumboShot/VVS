@@ -18,7 +18,6 @@ namespace VVS.Layout
         private Replacement _replacement;
         //use 1 for old meter, 2 for new meter.
         private int oldOrNew = 0;
-        private Meter oldMeter;        
 
         public NewMeter(Replacement currentReplacement, int oldOrNew)
         {
@@ -28,10 +27,6 @@ namespace VVS.Layout
             _replacement = currentReplacement;
             this.oldOrNew = oldOrNew;
             _connection = DependencyService.Get<ISQLiteDB>().GetConnection();
-            if(oldOrNew == 1)
-            {
-                
-            }
 
             takePhotoFull.Clicked += async (sender, args) =>
             {

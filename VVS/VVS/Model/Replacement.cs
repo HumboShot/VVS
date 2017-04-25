@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SQLite;
 
 namespace VVS.Model
@@ -12,8 +8,18 @@ namespace VVS.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string CustomerName { get; set; }
+        public int BeforeReportId { get; set; }
+        [Ignore]
+        public Report BeforeReport { get; set; }
+        public int AfterReportId { get; set; }
+        [Ignore]
+        public Report AfterReport { get; set; }
         public int OldMeterId { get; set; }
+        [Ignore]
+        public Meter OldMeter { get; set; }
         public int NewMeterId { get; set; }
+        [Ignore]
+        public Meter NewMeter { get; set; }
         public DateTime  Time { get; set; }
         public int LocId { get; set; }
         [Ignore]
@@ -22,7 +28,6 @@ namespace VVS.Model
         //4 newmeter registered, 5 after report registered, 6 Job completed.
         public int Status { get; set; }
         public int EmployeeId { get; set; }
-
       
 
         public Replacement()
@@ -50,6 +55,6 @@ namespace VVS.Model
             LocId = locId;
             Status = status;
             EmployeeId = employeeId;
-        }
+        }        
     }
 }

@@ -4,7 +4,26 @@
              x:Class="VVS.Layout.ReplacementPage">
 
     <StackLayout>
-        <Button Text="Gamle måler" Clicked="OldMeter_OnClicked"/>
-        <Button Text="Nye måler" Clicked="NewMeter_OnClicked"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Kunde:" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="CustomerName" TextColor="Black" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Adresse:" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="ReplacementAddress" TextColor="Black" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Tidspunkt" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="ReplacementTime" TextColor="Black" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Status:" TextColor="Black" FontSize="Medium"/>
+            <Label x:Name="ReplacementStatus" TextColor="Black" FontSize="Medium"/>
+        </StackLayout>
+        <Button Text="Bekræft lokation" Clicked="Location_OnClicked"/>
+        <Button Text="Før installations rapport" Clicked="BeforeReport_OnClicked"/>
+        <Button Text="Gammel måler" Clicked="OldMeter_OnClicked"/>
+        <Button Text="Ny måler" Clicked="NewMeter_OnClicked"/>
+        <Button Text="Efter installations rapport" Clicked="AfterReport_OnClicked"/>
     </StackLayout>
 </ContentPage>
