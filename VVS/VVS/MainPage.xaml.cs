@@ -13,13 +13,14 @@ namespace VVS
 {
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<Replacement> _replacements;
+        private ObservableCollection<Replacement> _ObservableReplacementList;
+        private List<Replacement> _replacementList = new List<Replacement>();
         private SQLiteAsyncConnection _connection;        
         private Replacement _selectedReplacement;
 
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
             _connection = DependencyService.Get<ISQLiteDB>().GetConnection();
         }
 
@@ -28,7 +29,7 @@ namespace VVS
             GenerateData gen = new GenerateData();
             await LoadData();
 
-            if (_replacements.Count < 1)
+            if (_replacementList.Count < 1)
             {
                 await _connection.InsertAllAsync(gen.ListMeters);
                 await _connection.InsertAllAsync(gen.ListLocations);
@@ -36,11 +37,30 @@ namespace VVS
                 await LoadData();
             }
 
-            replacementsListView.ItemsSource = _replacements;
-
+            List<Replacement> tempList = _replacementList.FindAll(x => x.Status != 6 && x.Status != -1);
+            SetObservableCollection(tempList);
             base.OnAppearing();
         }
 
+        private void ShowNewReplacements(object sender, EventArgs e)
+        {            
+            List<Replacement> tempList = _replacementList.FindAll(x => x.Status != 6 && x.Status !=-1);
+            SetObservableCollection(tempList);
+        }
+
+        private void ShowDoneReplacements(object sender, EventArgs e)
+        {            
+            List<Replacement> tempList = _replacementList.FindAll(x => x.Status == 6);
+            SetObservableCollection(tempList);
+        }
+
+        private void ShowImpossibleReplacements(object sender, EventArgs e)
+        {            
+            List<Replacement> tempList = _replacementList.FindAll(x => x.Status == -1);
+            SetObservableCollection(tempList);
+        }
+
+        //Generate Tables, Insert TestData, retrive Data from DB.
         private async Task LoadData()
         {
             try
@@ -55,14 +75,25 @@ namespace VVS
                 Debug.WriteLine("Fejl " + e.ToString());
             }
 
-            var replacements = await _connection.Table<Replacement>().ToListAsync();
+            _replacementList = await _connection.Table<Replacement>().ToListAsync();
             var locations = await _connection.Table<Location>().ToListAsync();
-            foreach (var item in replacements)
+            var meters = await _connection.Table<Meter>().ToListAsync();
+            var reports = await _connection.Table<Report>().ToListAsync();
+            foreach (var item in _replacementList)
             {
                 item.Location = locations.Find(x => x.Id == item.LocId);
+                item.OldMeter = meters.Find(x => x.SerialNumber == item.OldMeterId);
+                item.NewMeter = meters.Find(x => x.SerialNumber == item.NewMeterId);
+                item.BeforeReport = reports.Find(x => x.Id == item.BeforeReportId);
+                item.AfterReport = reports.Find(x => x.Id == item.AfterReportId);
             }
-            _replacements = new ObservableCollection<Replacement>(replacements);
-            Debug.WriteLine("Loaded " + _replacements.Count + " replacements");
+        }
+
+        private void SetObservableCollection(List<Replacement> tempList)
+        {
+            _ObservableReplacementList = new ObservableCollection<Replacement>(tempList);
+            replacementsListView.ItemsSource = _ObservableReplacementList;
+            Debug.WriteLine("Loaded " + _ObservableReplacementList.Count + " replacements");
         }
 
         private async void OnReplaceSelected(object sender, SelectedItemChangedEventArgs e)
@@ -85,20 +116,6 @@ namespace VVS
                     return;
             }
 
-        }
-
-        private async void Debug_OnClicked(object sender, EventArgs e)
-        {
-            try
-            {   
-                //TODO get the right replacement.             
-                await Navigation.PushAsync(new ReplacementPage(new Replacement()));
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Replacement didn't work");
-                throw;
-            }
         }
     }
 }

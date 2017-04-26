@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VVS.Layout.MeterPage" BackgroundColor="LightBlue">                
+
+    <ScrollView>
+        <StackLayout Spacing="5" Padding="5">
+                <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions ="Center" WidthRequest="90" Text="Serienummer:" TextColor="Black"/>
+                <Entry HorizontalOptions ="FillAndExpand"  Keyboard="Numeric" x:Name="BarcodeField" BackgroundColor="White"/>
+            </StackLayout>            
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions ="Start" WidthRequest="90" Text="Valider:" TextColor="Black"/>
+                <Entry HorizontalOptions ="FillAndExpand" Keyboard="Numeric" x:Name="BarcodeField2" BackgroundColor="White"/>
+            </StackLayout>
+            <Button Text="Scan serienummere" Clicked="ButtonScanner_OnClicked" x:Name="ScanButton"/>
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions ="Start" WidthRequest="120" Text="Skriv forbrug i m3:" TextColor="Black"/>
+                <Entry HorizontalOptions ="FillAndExpand" Keyboard="Numeric" x:Name="Consumption" BackgroundColor="White"/>
+            </StackLayout>            
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions ="Start" WidthRequest="120" Text="Valider forbrug:" TextColor="Black"/>
+                <Entry HorizontalOptions ="FillAndExpand" Keyboard="Numeric" x:Name="Consumption2" BackgroundColor="White"/>
+            </StackLayout>
+            <Button Text="Tag billede af meter" Clicked="TakePhotoMeter"/>
+            <Label Text="Kommentar" TextColor="Black"/>
+            <Editor HeightRequest="120" x:Name="Comment" BackgroundColor="White"/>
+            <Button Text="Gem" Clicked="Onsave"/>               
+            </StackLayout>
+    </ScrollView>
+</ContentPage>

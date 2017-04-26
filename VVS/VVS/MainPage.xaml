@@ -5,17 +5,21 @@
              x:Class="VVS.MainPage"
              Title="Hjørring Rørteknik A/S">
 
-    <StackLayout>
-        <Button Text="DEBUG" Clicked="Debug_OnClicked"/>
+    <StackLayout Padding="5" Spacing="5">
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Jobliste" x:Name="notDone" Clicked="ShowNewReplacements"/>
+            <Button Text="Fuldførte" x:Name="Done" Clicked="ShowDoneReplacements"/>
+            <Button Text="Utilgængelige" x:Name="Inaccessible" Clicked="ShowImpossibleReplacements"/>
+        </StackLayout>
         <ListView x:Name="replacementsListView"  ItemSelected="OnReplaceSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding CustomerName}"/>                            
-                            <Label Text="{Binding NewMeterId}"/>
+                        <StackLayout Orientation="Vertical">                            
+                            <Label Text="{Binding Location.Address}"/>
+                            <Label Text="{Binding Time}"/>
                         </StackLayout>
-                    </ViewCell>                    
+                    </ViewCell>  
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

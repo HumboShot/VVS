@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VVS.Layout.PicturePage">
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="10">                        
+            <Image x:Name="image" Aspect="AspectFit"/>
+            <StackLayout Orientation="Horizontal">
+            <Button HorizontalOptions="StartAndExpand" BackgroundColor="Red" Text="Tag Igen" Clicked="ButtonRetake_Clicked" FontSize="Large"/>
+                <Button HorizontalOptions="EndAndExpand" BackgroundColor="Green" Text="Godkend" Clicked="ButtonApprove_Clicked" FontSize="Large"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

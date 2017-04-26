@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VVS.Layout.ReportPage">
+    <ScrollView>
+        <StackLayout Spacing="5" Padding="5">
+            <Button Text="Tag billede af hele installationen" Clicked="ButtonTakePicture_Clicked"/>
+            <Label Text="Kommentar" TextColor="Black"/>
+            <Editor HeightRequest="120" x:Name="ReportComment" BackgroundColor="White"/>
+            <Button Text="Gem Report" Clicked="ButtonSaveReport_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

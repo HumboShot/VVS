@@ -27,9 +27,9 @@ namespace VVS.Model
                 ListMeters.Add(new Meter(10000000 + i));                
             }
 
-            ListReplacements.Add(new Replacement("UCN Aalborg - Campus Sofiendalsvej", 10000001, DateTime.Now.AddHours(2), 1, 0, 1));
-            ListReplacements.Add(new Replacement("Hjørring Rørteknik A/S", 10000002, DateTime.Now.AddHours(3), 2, 0, 1));
-            ListReplacements.Add(new Replacement("Aalborg Stadion", 10000003, DateTime.Now.AddHours(4), 3, 0, 1));
+            ListReplacements.Add(new Replacement("UCN Aalborg - Campus Sofiendalsvej", 10000000, DateTime.Now.AddHours(2), 1, 0, 1));
+            ListReplacements.Add(new Replacement("Hjørring Rørteknik A/S", 10000001, DateTime.Now.AddHours(3), 2, 0, 1));
+            ListReplacements.Add(new Replacement("Aalborg Stadion", 10000002, DateTime.Now.AddHours(4), 3, 0, 1));
             
         }
     }

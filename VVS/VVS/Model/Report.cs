@@ -12,8 +12,7 @@ namespace VVS.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string PicturePath { get; set; }
-        public string Comment { get; set; }
-        public int MyProperty { get; set; }
+        public string Comment { get; set; }        
         public DateTime Time { get; set; }
     }
 }
